@@ -9,7 +9,6 @@ public class MenuView : MonoBehaviour
     public Button buttonStart;
     public Button buttonTutorial;
     public Button buttonCredits;
-    public Button buttonExit;
     public Button buttonReturn1;
     public Button buttonReturn2;
     void Start()
@@ -35,13 +34,7 @@ public class MenuView : MonoBehaviour
             Model.SelectOption(MenuModel.OptionsMenu.Credits);
             Controller.ViewCredits();
         });
-        
-        buttonExit.onClick.AddListener(() =>
-        {
-            Model.SelectOption(MenuModel.OptionsMenu.Exit);
-            Controller.ExitGame();
-        });
-        
+                
         buttonReturn1.onClick.AddListener(() =>
         {
             Model.SelectOption(MenuModel.OptionsMenu.Return);
@@ -67,9 +60,6 @@ public class MenuView : MonoBehaviour
                 
                 break;
             case MenuModel.OptionsMenu.Credits:
-                
-                break;
-            case MenuModel.OptionsMenu.Exit:
                 
                 break;
             case MenuModel.OptionsMenu.Return:
