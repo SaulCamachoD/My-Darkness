@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerWalk : MonoBehaviour
@@ -10,6 +8,8 @@ public class PlayerWalk : MonoBehaviour
     private float inputHorizontal;
     private float inputVertical;
 
+    public AudioSource audioSource; 
+    public AudioClip pasos; 
     private void Update()
     {
         inputHorizontal = Input.GetAxis("Horizontal"); // Obtiene la entrada horizontal (A/D o izquierda/derecha)
@@ -20,12 +20,29 @@ public class PlayerWalk : MonoBehaviour
 
         float giro = inputHorizontal * velocidadGiro * Time.deltaTime; // Calcula la cantidad de giro
         transform.Rotate(0f, giro, 0f);
+
+        HandleFootsteps();
     }
 
     public void animationsCharacter()
     {
         animator.SetFloat("Walk", inputHorizontal);
         animator.SetFloat("Walk", inputVertical);
+    }
+
+    private void HandleFootsteps()
+    {
+        // Verifica si el jugador se está moviendo
+        if ((inputHorizontal != 0 || inputVertical != 0) && !audioSource.isPlaying)
+        {
+            audioSource.clip = pasos; // Asigna el clip de pasos al AudioSource
+            audioSource.Play(); // Reproduce el sonido de pasos
+        }
+        // Detén el sonido cuando el jugador deja de moverse
+        else if (inputHorizontal == 0 && inputVertical == 0 && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 }
 

@@ -12,11 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 5.0f;
     public bool isOnGround = true;
     public Animator animator;
+    public AudioManager audioManager;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         animator.SetBool("Run", true);
+        
+
     }
 
     void Update()
@@ -29,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             animator.SetTrigger("Jump");
+            audioManager.StopAudio();
             isOnGround = false;
         }
+        
     }
 
     void FixedUpdate()
@@ -42,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isOnGround = true;
+        audioManager.PlayAudioClip(0);
     }
 
 }
