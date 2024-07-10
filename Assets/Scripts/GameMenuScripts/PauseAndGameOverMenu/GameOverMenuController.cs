@@ -7,6 +7,7 @@ public class GameOverMenuController : MonoBehaviour
 {
     public GameObject GameOverMenu;
     public GameObject CongralutationMenu;
+    public StopsMusic Music;
 
     private void Start()
     {
@@ -17,11 +18,13 @@ public class GameOverMenuController : MonoBehaviour
     public void ShowGameOverMenu()
     {
         GameOverMenu.SetActive(true);
+        Music.StopMusic();
         Time.timeScale = 0.0f;
     }
     public void ShowCongratulationMenu()
     {
         CongralutationMenu.SetActive(true);
+        Music.StopMusic();
         Time.timeScale = 0.0f;
     }
 
