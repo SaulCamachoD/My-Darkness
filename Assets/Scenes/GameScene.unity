@@ -32478,7 +32478,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd02bc503e6b2946bb646476037c36f, type: 3}
-<<<<<<< HEAD
 --- !u!1001 &1930725091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32617,8 +32616,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.212712, y: 1, z: 3.8963013}
   m_Center: {x: 0.032521237, y: 0, z: -1.4481531}
-=======
->>>>>>> 496909ce07eb7662d8b7dc6a9977cbf866d51ced
 --- !u!1 &1940212203
 GameObject:
   m_ObjectHideFlags: 0
