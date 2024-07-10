@@ -8,6 +8,7 @@ public class ShadowMovement : MonoBehaviour
     public Animator animator;
     public GameObject player;
     public GameOverMenuController GameOverMenu;
+    public PlayerMovement PlayerMovement;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class ShadowMovement : MonoBehaviour
         if (other.gameObject.transform.name == "Player")
         {
             GameOverMenu.ShowGameOverMenu();
+            PlayerMovement.stopsaudio();
         }
     }
 }

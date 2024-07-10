@@ -1059,6 +1059,7 @@ MonoBehaviour:
   animator: {fileID: 59805788}
   player: {fileID: 507658445}
   GameOverMenu: {fileID: 463316103}
+  PlayerMovement: {fileID: 507658453}
 --- !u!95 &59805788
 Animator:
   serializedVersion: 5
@@ -1924,6 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverMenu: {fileID: 463316103}
+  PlayerMovement: {fileID: 507658453}
 --- !u!4 &92350077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2665948033558224088, guid: 9fd02bc503e6b2946bb646476037c36f, type: 3}
@@ -5840,6 +5842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverMenu: {fileID: 463316103}
+  PlayerMovement: {fileID: 507658453}
 --- !u!65 &340590736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10303,6 +10306,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2926449183567056212, guid: 54214c304cf873e438c05505cd082264, type: 3}
   m_PrefabInstance: {fileID: 1739158648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &507658453 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8646238590691052063, guid: 54214c304cf873e438c05505cd082264, type: 3}
+  m_PrefabInstance: {fileID: 1739158648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507658445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e6912e556b86c4ea0e8e6b9379b77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509960133
 GameObject:
   m_ObjectHideFlags: 0
@@ -22053,7 +22067,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
