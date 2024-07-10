@@ -1,25 +1,27 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class SinkInteraction : MonoBehaviour
 {
-    public TextMeshProUGUI interactionMessage; // Referencia al texto de la UI
-    private bool isNearSink = false; // Bandera para verificar si el personaje está cerca del Sink
-    private bool messageDisplayed = false; // Bandera para verificar si el segundo mensaje ha sido mostrado
+    public GameObject points;
+    public GameObject instruction;
+    public Minimanager minimanager;
 
     void Start()
     {
-        interactionMessage.gameObject.SetActive(false); // Asegúrate de que el mensaje esté oculto al inicio
+        points.gameObject.SetActive(false);
+        instruction.gameObject.SetActive(false); 
     }
 
     void Update()
     {
-        // Detectar si el jugador presiona la tecla "X" cuando está cerca del Sink y el segundo mensaje no ha sido mostrado
-        if (isNearSink && Input.GetKeyDown(KeyCode.X) && !messageDisplayed)
+        
+        if (Input.GetKeyDown(KeyCode.F) )
         {
-            // Cambiar el mensaje en la UI
-            interactionMessage.text = "...";
-            messageDisplayed = true;
+            
+            instruction.gameObject.SetActive(false);
+            StartCoroutine(ChangeScene());
         }
     }
 
@@ -27,10 +29,7 @@ public class SinkInteraction : MonoBehaviour
     {
         if (other.gameObject.name == "Sink")
         {
-            interactionMessage.text = "Presiona X para ver";
-            interactionMessage.gameObject.SetActive(true);
-            isNearSink = true; // El personaje está cerca del Sink
-            messageDisplayed = false; // Resetear el mensaje mostrado
+            instruction.gameObject.SetActive(true);
         }
     }
 
@@ -38,8 +37,14 @@ public class SinkInteraction : MonoBehaviour
     {
         if (other.gameObject.name == "Sink")
         {
-            interactionMessage.gameObject.SetActive(false);
-            isNearSink = false; // El personaje se alejó del Sink
+            instruction.gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator ChangeScene()
+    {
+        points.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        minimanager.ChangeScene();
     }
 }
