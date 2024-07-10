@@ -6,6 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TMP_Text timer;
+    public GameOverMenuController GameOverMenu;
     public float time = 5;
 
     // Start is called before the first frame update
@@ -25,9 +26,7 @@ public class Timer : MonoBehaviour
             if (time <= 0)
             {
                 time = 0;
-                
-               
-                Debug.Log("Game Over");
+                GameOverMenu.ShowGameOverMenu();
             }
 
         }
