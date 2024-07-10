@@ -17,7 +17,7 @@ public class MenuController : MonoBehaviour
     }
     public void StarGame()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("IntroductionScene");
     }
 
     public void ViewTutorial()
