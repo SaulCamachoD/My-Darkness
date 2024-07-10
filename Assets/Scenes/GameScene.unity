@@ -10219,6 +10219,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559802053}
   m_Mesh: {fileID: 8948196544248697939, guid: 8cabe59af6b2fb04ebcbb8478a6d8b7d, type: 3}
+--- !u!4 &568551086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2665948033558224088, guid: 9fd02bc503e6b2946bb646476037c36f, type: 3}
+  m_PrefabInstance: {fileID: 1930725091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &569556677
 GameObject:
   m_ObjectHideFlags: 0
@@ -18033,6 +18038,7 @@ Transform:
   - {fileID: 1709190909}
   - {fileID: 798931471}
   - {fileID: 92350077}
+  - {fileID: 568551086}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123023138
@@ -18577,6 +18583,10 @@ PrefabInstance:
     - target: {fileID: 4690114519374053242, guid: c8d1d4b32ab4eb949a56deba76941171, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761164890844694149, guid: c8d1d4b32ab4eb949a56deba76941171, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 26.21
       objectReference: {fileID: 0}
     - target: {fileID: 4965834574350829612, guid: c8d1d4b32ab4eb949a56deba76941171, type: 3}
       propertyPath: m_LocalPosition.x
